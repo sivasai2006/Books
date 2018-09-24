@@ -1,0 +1,47 @@
+CREATE TABLE Employees (
+    EmpID int NOT NULL PRIMARY KEY,
+    LastName varchar(50) NOT NULL,
+    FirstName varchar(50) NOT NULL,
+    Gender varchar(1) NOT NULL,
+    Designation varchar(50) NOT NULL,
+    Address varchar(255) NOT NULL,
+    City varchar(255) NOT NULL,
+    Email varchar(255) NOT NULL,
+    DOB datetime NOT NULL,
+    Pincode int NOT NULL,
+    DOJ datetime NOT NULL,
+);
+
+CREATE TABLE Appraisals(
+    EmpID int NOT NULL,
+    YearOfAppraisal int NOT NULL,
+    Rating int NOT NULL,
+    CONSTRAINT PK_Appraisal PRIMARY KEY (EmpID,YearOfAppraisal),
+    CONSTRAINT FK_EA FOREIGN KEY (EmpID) REFERENCES Employees(EmpID)
+);
+
+CREATE TABLE Survey (
+    EmpID int NOT NULL PRIMARY KEY,
+    Salary int NOT NULL,
+    WorkLifeBalance int NOT NULL,
+    CurrentLocation bit NOT NULL,
+    PreferredLocation varchar(50),
+    Appraisal bit NOT NULL,
+    Recommend bit NOT NULL,
+    Opportunities bit NOT NULL,
+    CurrentRole bit NOT NULL,
+    DesiredRole varchar(50) NOT NULL,
+    ImprovementIdea varchar(255) NOT NULL,
+    Favorite varchar(255) NOT NULL,
+    Infrastructure int NOT NULL
+    CONSTRAINT FK_EmployeeSurvey FOREIGN KEY (EmpID) REFERENCES Employees(EmpID)
+);
+
+CREATE TABLE ExEmployees(
+	EmpID int NOT NULL PRIMARY KEY,
+	Reason varchar(255) NOT NULL,
+	DOR datetime NOT NULL,
+	CONSTRAINT FK_ExEmployee FOREIGN KEY (EmpID) REFERENCES Employees(EmpID)
+);
+
+//Resign few location and opportunities
