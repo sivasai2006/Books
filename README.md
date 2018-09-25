@@ -12,15 +12,16 @@ http://sqoop.apache.org/docs/1.4.2/SqoopUserGuide.html
 2. Use – password-file Option with Sqoop Command
    Best Approach secure your password and execute Sqoop command without getting password prompt is to use the — password-file option. You can keep the password file in the system where you are executing the Sqoop command or you can copy that file to HDFS directory and use the path in the sqoop command. It is better if you create the file in HDFS system so that that will be shared across multiple users.
 
-   Read: Hadoop HDFS Architecture Introduction and Design
-   ```$echo -n "password" > /etc/sqoop/conf/passwords/mysql-pass.txt```
+   Create a .password file
+   ```$echo -n "myPassword" > fileName.password```
 
-   ```$chmod 400 /etc/sqoop/conf/passwords/mysql-pass.txt```
-
+   ```$hdfs dfs -put .password /user/$USER/```
+   ```$hdfs dfs -chmod 400 /user/$USER/fileName.password```
+   Use that .password file in sqoop import
    ```$sqoop import --connect jdbc:netezza://localhost/MYDB ```
    ```--username testuser \```
+   ```--password-file ${user.home}/fileName.password```
    ```--table ORDERS \```
-   ```--password-file /etc/sqoop/conf/passwords/mysql-pass.txt```
 
 # Hive
 1. Convert External table to Internal table or vice-versa
