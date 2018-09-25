@@ -23,6 +23,7 @@ http://sqoop.apache.org/docs/1.4.2/SqoopUserGuide.html
    Use that .password file in sqoop import
    
    ```$sqoop import --connect jdbc:netezza://localhost/MYDB ```
+   
    ```--username testuser \```
    ```--password-file ${user.home}/fileName.password```
    ```--table ORDERS \```
