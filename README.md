@@ -1,15 +1,7 @@
 # Sqoop
 http://sqoop.apache.org/docs/1.4.2/SqoopUserGuide.html
 
-1. Use — P Option with Sqoop Command
-   Sqoop supports reading passwords via standard input (STDIN). You can use this option by with help of — P options with sqoop command. Sqoop will prompt you for the password.
-
-   Below is the example of using — P option:
-
-   ```$sqoop import --connect jdbc:netezza://localhost/MYDB \```
-   ```--username testuser -- P --table ORDERS```
-
-2. Use – password-file Option with Sqoop Command
+1. Use – password-file Option with Sqoop Command
    Best Approach secure your password and execute Sqoop command without getting password prompt is to use the — password-file option. You can keep the password file in the system where you are executing the Sqoop command or you can copy that file to HDFS directory and use the path in the sqoop command. It is better if you create the file in HDFS system so that that will be shared across multiple users.
 
    Create a .password file
