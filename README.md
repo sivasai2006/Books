@@ -41,3 +41,8 @@ http://sqoop.apache.org/docs/1.4.2/SqoopUserGuide.html
    Use the following command to convert an internal table to an external table:
 
     ```ALTER TABLE <tablename> SET TBLPROPERTIES('EXTERNAL'='TRUE');```
+
+
+# Shell Script
+
+https://chmodcommand.com/
