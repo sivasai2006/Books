@@ -49,7 +49,7 @@ https://chmodcommand.com/
 File protection with chmod
 
 |Command	      | Meaning                                                                                                          |
-|--------------|:-----------------------------------------------------------------------------------------------------------------| 
+|:--------------|:-----------------------------------------------------------------------------------------------------------------| 
 |chmod 400     | file	To protect a file against accidental overwriting.                                                         |
 |chmod 500     | directory	To protect yourself from accidentally removing, renaming or moving files from this directory.          |
 |chmod 600     | file	A private file only changeable by the user who entered this command.                                      |
