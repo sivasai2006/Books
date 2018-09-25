@@ -8,10 +8,8 @@ http://sqoop.apache.org/docs/1.4.2/SqoopUserGuide.html
    
    Use the following command to convert an external table to an internal table:
 
-    use <db name>;
     ALTER TABLE <tablename> SET TBLPROPERTIES('EXTERNAL'='FALSE');
 
    Use the following command to convert an internal table to an external table:
 
-    use <db name>;
     ALTER TABLE <tablename> SET TBLPROPERTIES('EXTERNAL'='TRUE');
