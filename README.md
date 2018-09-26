@@ -3,6 +3,8 @@ http://sqoop.apache.org/docs/1.4.2/SqoopUserGuide.html
 
 
 # Hive
+https://qubole.zendesk.com/hc/en-us/articles/214885263-HIVE-Dynamic-Partitioning-tips
+
 1. Convert External table to Internal table or vice-versa
    External Tables and Internal Tables (non-External) differ only in the aspect that dropping the table drops meta-data in External          tables, whereas it drops both meta-data and data in the case of Internal tables.
    
