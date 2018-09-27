@@ -33,3 +33,14 @@ File protection with chmod
 |chmod 755     | directory	For files that should be readable and executable by others, but only changeable by the issuing user.   |
 |chmod 775     | file	Standard file sharing mode for a group.                                                                   |
 |chmod 777     | file	Everybody can do everything to this file.                                                                 |
+
+##Script1
+IFS="|";
+
+animals="dog|cat|fish|squirrel|bird|shark";
+animalArray=($animals);
+
+for ((i=0; i<${#animalArray[@]}; ++i));
+do     
+    echo "animal $i: ${animalArray[$i]}"; 
+done
