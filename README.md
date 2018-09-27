@@ -34,7 +34,7 @@ File protection with chmod
 |chmod 775     | file	Standard file sharing mode for a group.                                                                   |
 |chmod 777     | file	Everybody can do everything to this file.                                                                 |
 
-##Script1
+Script1:
 IFS="|";
 
 animals="dog|cat|fish|squirrel|bird|shark";
@@ -44,3 +44,12 @@ for ((i=0; i<${#animalArray[@]}; ++i));
 do     
     echo "animal $i: ${animalArray[$i]}"; 
 done
+
+
+Script2:
+IFS="|";
+
+animals="animal list|dog,cat,fish,squirrel,bird,shark";
+animalArray=($animals);
+
+echo "${animalArray[0]}"-"${animalArray[1]}"; 
