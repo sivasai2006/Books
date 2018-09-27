@@ -34,6 +34,8 @@ File protection with chmod
 |chmod 775     | file	Standard file sharing mode for a group.                                                                   |
 |chmod 777     | file	Everybody can do everything to this file.                                                                 |
 
+https://timmurphy.org/2015/11/09/merging-two-files-in-linux-using-paste/
+
 Script1:
 IFS="|";
 
