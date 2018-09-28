@@ -55,3 +55,6 @@ animals="animal list|dog,cat,fish,squirrel,bird,shark";
 animalArray=($animals);
 
 echo "${animalArray[0]}"-"${animalArray[1]}"; 
+
+# Spark
+https://stackoverflow.com/questions/46999601/re-run-spark-jobs-on-failure-or-abort
