@@ -59,4 +59,6 @@ echo "${animalArray[0]}"-"${animalArray[1]}";
 # Spark
 https://stackoverflow.com/questions/46999601/re-run-spark-jobs-on-failure-or-abort
 https://nofluffjuststuff.com/blog/mark_johnson/2016/02/5_steps_to_get_started_running_spark_on_yarn_with_a_hadoop_cluster
+https://www.quora.com/How-is-fault-tolerance-achieved-in-Apache-Spark
+https://data-flair.training/blogs/fault-tolerance-in-apache-spark/
 
