@@ -62,3 +62,5 @@ https://nofluffjuststuff.com/blog/mark_johnson/2016/02/5_steps_to_get_started_ru
 https://www.quora.com/How-is-fault-tolerance-achieved-in-Apache-Spark
 https://data-flair.training/blogs/fault-tolerance-in-apache-spark/
 
+
+There is a difference between CreateOrReplaceTempView and createGlobalTempView, CreateorReplaceTempView is used when you want to store the table for a particular spark session and createGlobalTempView is used when you want to share the temp table across multiple spark sessions.
