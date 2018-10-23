@@ -61,6 +61,7 @@ https://stackoverflow.com/questions/46999601/re-run-spark-jobs-on-failure-or-abo
 https://nofluffjuststuff.com/blog/mark_johnson/2016/02/5_steps_to_get_started_running_spark_on_yarn_with_a_hadoop_cluster
 https://www.quora.com/How-is-fault-tolerance-achieved-in-Apache-Spark
 https://data-flair.training/blogs/fault-tolerance-in-apache-spark/
+http://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.sql.Dataset
 
 *CreateOrReplaceTempView vs CreateGlobalTempView*
 There is a difference between CreateOrReplaceTempView and createGlobalTempView, CreateorReplaceTempView is used when you want to store the table for a particular spark session and createGlobalTempView is used when you want to share the temp table across multiple spark sessions.
