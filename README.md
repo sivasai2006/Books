@@ -89,3 +89,21 @@ FROM dfTable LIMIT 1
 |return_value|null|return_value|return_value|
 +------------+----+------------+------------+
 Naturally, we can use these in select expressions on DataFrames, as well.
+
+*fill*
+Using the fill function, you can fill one or more columns with a set of values. This can be done by specifying a map—that is a particular value and a set of columns.
+
+For example, to fill all null values in columns of type String, you might specify the following:
+
+df.na.fill("All Null values become this string")
+
+We could do the same for columns of type Integer by using df.na.fill(5:Integer), or for Doubles df.na.fill(5:Double). To specify columns, we just pass in an array of column names like we did in the previous example:
+
+// in Scala
+df.na.fill(5, Seq("StockCode", "InvoiceNo"))
+
+We can also do this with with a Scala Map, where the key is the column name and the value is the value we would like to use to fill null values:
+
+// in Scala
+val fillColValues = Map("StockCode" -> 5, "Description" -> "No Value")
+df.na.fill(fillColValues)
