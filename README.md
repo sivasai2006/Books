@@ -72,3 +72,20 @@ By default Spark is case insensitive; however, you can make Spark case sensitive
 
 -- in SQL
 set spark.sql.caseSensitive true
+
+*ifnull, nullIf, nvl, and nvl2*
+There are several other SQL functions that you can use to achieve similar things. ifnull allows you to select the second value if the first is null, and defaults to the first. Alternatively, you could use nullif, which returns null if the two values are equal or else returns the second if they are not. nvl returns the second value if the first is null, but defaults to the first. Finally, nvl2 returns the second value if the first is not null; otherwise, it will return the last specified value (else_value in the following example):
+
+-- in SQL
+SELECT
+  ifnull(null, 'return_value'),
+  nullif('value', 'value'),
+  nvl(null, 'return_value'),
+  nvl2('not_null', 'return_value', "else_value")
+FROM dfTable LIMIT 1
++------------+----+------------+------------+
+|           a|   b|           c|           d|
++------------+----+------------+------------+
+|return_value|null|return_value|return_value|
++------------+----+------------+------------+
+Naturally, we can use these in select expressions on DataFrames, as well.
