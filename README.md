@@ -107,3 +107,6 @@ We can also do this with with a Scala Map, where the key is the column name and 
 // in Scala
 val fillColValues = Map("StockCode" -> 5, "Description" -> "No Value")
 df.na.fill(fillColValues)
+
+*Spark Read API*
+format is optional because by default Spark will use the Parquet format.
