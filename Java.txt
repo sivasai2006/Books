@@ -1,0 +1,2 @@
+1. Socket
+2. Applet

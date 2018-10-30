@@ -1,0 +1,31 @@
+//Need to try
+1. scala.util.{Try, Success, Failure}
+2. cogroup, foldbykey, aggregatebykey, combinebykey
+3. coalesce
+
+https://github.com/phatak-dev/spark2.0-examples
+
+https://github.com/phatak-dev/introduction-to-spark-streaming
+https://github.com/phatak-dev/anatomy-of-rdd
+https://github.com/phatak-dev/structured_data_processing_spark_sql
+https://github.com/phatak-dev/anatomy_of_spark_datasource_api
+https://github.com/phatak-dev/anatomy_of_spark_dataframe_api
+
+https://github.com/apache/spark/tree/master/examples/src/main/scala/org/apache/spark/examples
+https://github.com/apache/spark
+
+https://github.com/phatak-dev/spark/tree/master/examples/src/main/scala/org/apache/spark/examples
+https://github.com/phatak-dev/spark-two-migration/tree/master/spark-one/src/main/scala/com/madhukaraphatak/spark/migration/sparkone
+https://github.com/phatak-dev/spark-two-migration/tree/master/spark-two/src/main/scala/com/madhukaraphatak/spark/migration/sparktwo
+
+
+https://stackoverflow.com/questions/37301226/difference-between-dataset-api-and-dataframe-api
+
+
+
+Logging:
+https://spark.apache.org/docs/2.3.0/api/java/org/apache/spark/SparkContext.html#setLogLevel-java.lang.String-
+https://stackoverflow.com/questions/46212827/sparkcontext-setlogleveldebug-doesnt-works-in-cluster
+https://www.programcreek.com/scala/org.apache.log4j.Level
+
+https://www.programcreek.com/scala/play.api.Logger
