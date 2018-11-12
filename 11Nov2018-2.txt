@@ -1,0 +1,36 @@
+package com.examples.spark
+
+import org.apache.spark.sql.SparkSession
+
+object SparkExample {
+	def main(args: Array[String]) {
+		val sparkSession = SparkSession.builder().appName("SparkSessionZipsExample").config(conf).getOrCreate()
+
+		//https://github.com/phatak-dev/spark2.0-examples/blob/master/src/main/resources/sales.csv
+		val df1 = sparkSession.read.option("header", "true").csv("src/main/resources/sales.csv")
+		val df2 = sparkSession.read.option("header", "true").csv("src/main/resources/sales.csv")
+
+		val joinExpression = df1.col("customerId") === df2.col("customerId")
+		var joinType = "inner"
+
+		//person.withColumnRenamed("id", "personId")
+		/*Inner joins are the default join, so we just need to specify our left DataFrame and join the right in the JOIN expression: 
+		df1.join(df2, joinExpression).show()*/
+		var df3 = df1.join(df2, joinExpression, joinType).show()
+
+
+		df3.na.fill("NoName", Seq("CustomerName"))
+
+		df3.withColumn("customerCategory",when(col("amountPaid") <= 100, "Bronze")
+						.when(col("amountPaid") > 100 and col("amountPaid") < 500, "Silver")
+						.when(col("amountPaid") >= 500, "Gold"))
+			.withColumn("StateCode",when(col("State") === lit("TN"), "Tamilnadu")
+						.when(col("State") === lit("AP"), "Andhra Pradesh")
+						.otherwise(col("State")))
+		//df3.drop(df3.col("State"))	
+
+		df3.withColumn("customerCategory", expr("customerId > 10"))
+
+		df3.show()
+	}
+}
