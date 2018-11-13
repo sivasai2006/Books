@@ -1,0 +1,5 @@
+https://www.youtube.com/playlist?list=PLkz1SCf5iB4enAR00Z46JwY9GGkaS2NON
+
+https://github.com/smallnest/kafka-example-in-scala
+https://gist.github.com/fancellu/f78e11b1808db2727d76
+https://github.com/knoldus/activator-kafka-scala-producer-consumer.g8
