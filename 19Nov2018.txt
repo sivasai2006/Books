@@ -1,0 +1,43 @@
+//READ TEXT FILE WITH CUSTOM DELIMITER
+//1
+val FIELD_SEP = " " //or whatever you have
+val dataset = sparkContext.textFile(sourceFile).map(line => {
+	val word::score::other = line.split(FIELD_SEP).toList
+	(word, score)
+}
+)
+
+//2
+sc.textFile("foo.txt").map(_.split("\t")).toDF()
+
+//3
+val df = sqlContext.read
+    .format("com.databricks.spark.csv")
+	.option("delimiter", "\t")
+    .option("header", "true")
+    .load("data.txt")
+//https://github.com/databricks/spark-csv
+
+//READ JSON FILE
+//1
+val df = spark.read.json("example.json")
+df.printSchema
+
+//2
+val mdf = spark.read.option("multiline", "true").json("multi.json")
+mdf.show(false)
+https://docs.databricks.com/spark/latest/data-sources/read-json.html
+	
+//READ XML FILE
+//1
+val sqlContext = new org.apache.spark.sql.SQLContext(sc)
+val df = sqlContext.read.format("com.databricks.spark.xml").option("rowTag", "Transaction").load("/user/tsusanto/POSLog-201409300635-21.xml")
+val flattened = df.withColumn("LineItem", explode($"RetailTransaction.LineItem"))
+
+//2
+val df = sqlContext.read
+  .format("com.databricks.spark.xml")
+   .option("rowTag", "foo")
+   .load("bar.xml")
+//https://github.com/databricks/spark-xml
+
