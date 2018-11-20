@@ -1,0 +1,74 @@
+//Need to try
+1. scala.util.{Try, Success, Failure}
+2. cogroup, foldbykey, aggregatebykey, combinebykey
+3. Use SparkSession and access a hive table data
+4. Create a new column in dataframe and dataset and add value
+5. Create test case using JUnit or ScalaTest
+6. In which mode do we run Spark in real time? Client or Cluster?
+7. Log using log4j.properties
+8. Check Chapter16 for memory related issue and tell that for 'Challenges faced in the project'
+9. Deploy in Amazon S3/Azure Blob Storage
+
+
+
+//Global Temp View:
+https://stackoverflow.com/questions/49108386/what-is-the-purpose-of-global-temporary-views
+
+//udf
+https://blog.cloudera.com/blog/2017/02/working-with-udfs-in-apache-spark/
+https://jaceklaskowski.gitbooks.io/mastering-spark-sql/spark-sql-udfs.html
+https://acadgild.com/blog/writing-a-custom-udf-in-spark
+https://alvinhenrick.com/2016/07/10/apache-spark-user-defined-functions/
+
+//Flatten
+https://stackoverflow.com/questions/23138352/how-to-flatten-a-collection-with-spark-scala
+https://stackoverflow.com/questions/32906613/flattening-rows-in-spark
+
+//Misc
+https://medium.com/@mrpowers/adding-structtype-columns-to-spark-dataframes-b44125409803
+https://stackoverflow.com/questions/31610971/spark-repartition-vs-coalesce
+https://hackernoon.com/managing-spark-partitions-with-coalesce-and-repartition-4050c57ad5c4
+https://medium.com/@mrpowers
+https://www.youtube.com/watch?v=l0QGLMwR-lY&pbjreload=10
+
+
+
+https://github.com/phatak-dev/spark2.0-examples
+
+https://github.com/phatak-dev/introduction-to-spark-streaming
+https://github.com/phatak-dev/anatomy-of-rdd
+https://github.com/phatak-dev/structured_data_processing_spark_sql
+https://github.com/phatak-dev/anatomy_of_spark_datasource_api
+https://github.com/phatak-dev/anatomy_of_spark_dataframe_api
+
+https://github.com/apache/spark/tree/master/examples/src/main/scala/org/apache/spark/examples
+https://github.com/apache/spark
+
+https://github.com/phatak-dev/spark/tree/master/examples/src/main/scala/org/apache/spark/examples
+https://github.com/phatak-dev/spark-two-migration/tree/master/spark-one/src/main/scala/com/madhukaraphatak/spark/migration/sparkone
+https://github.com/phatak-dev/spark-two-migration/tree/master/spark-two/src/main/scala/com/madhukaraphatak/spark/migration/sparktwo
+
+
+https://stackoverflow.com/questions/37301226/difference-between-dataset-api-and-dataframe-api
+
+
+
+Logging:
+https://spark.apache.org/docs/2.3.0/api/java/org/apache/spark/SparkContext.html#setLogLevel-java.lang.String-
+https://stackoverflow.com/questions/46212827/sparkcontext-setlogleveldebug-doesnt-works-in-cluster
+https://www.programcreek.com/scala/org.apache.log4j.Level
+
+https://www.programcreek.com/scala/play.api.Logger
+
+
+->Which Spark API to use?
+Spark offers several choices of APIs, ranging from SQL to DataFrames and Datasets, and each of these can have different impacts for maintainability and testability of your application. To be perfectly honest, the right API depends on your team and its needs: some teams and projects will need the less strict SQL and DataFrame APIs for speed of development, while others will want to use type-safe Datasets or RDDs.
+
+
+->Secure Deployment Configurations
+Spark also provides some low-level ability to make your applications run more securely, especially in untrusted environments. Note that the majority of this setup will happen outside of Spark. These configurations are primarily network-based to help Spark run in a more secure manner. This means authentication, network encryption, and setting TLS and SSL configurations. Due to space limitations, we cannot include the entire configuration set here. Refer to the relevant table on Security Configurations in the Spark documentation(http://spark.apache.org/docs/latest/configuration.html#security).
+
+
+Elasticsearch:
+https://www.youtube.com/playlist?list=PLjQo0sojbbxWcy_byqkbe7j3boVTQurf9
+https://www.youtube.com/playlist?list=PLlg3hnqqh7qEriIpdMSOLJzO5KhYffXua
