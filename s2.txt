@@ -1,0 +1,37 @@
+object MyClass {
+def main(args: Array[String]): Unit = {
+        val in = scala.io.StdIn
+        val n = in.readInt()
+        for (_ <- 0 until n) {
+          //var words = scala.collection.mutable.Set[Int]()
+          var arr= in.readLine()
+          //for(i<-arr){println(i)}
+          //println(permutations("abc"))
+          //println(List(1,2,3).permutations.flatten.mkString("-"))
+          //println(List("a","b","c").permutations.mkString("-"))
+          
+          
+          //println(List("a","b","c").permutations.foreach { println })
+          
+          //var itemHolder = arr.toList.map(_.toString)
+          var itemHolder = List("a","b","c").permutations
+          var s = ""
+          for (item <- itemHolder) {s += item.flatten.mkString("")+" "}
+          print(s.trim)
+          
+          //println(List(1,2,3).map(_.toString).reduceLeft(_+_))
+        }
+    }
+def permutations(s: String): List[String] = {
+    def merge(ins: String, c: Char): Seq[String] =
+      for (i <- 0 to ins.length) yield
+        ins.substring(0, i) + c + ins.substring(i, ins.length)
+
+    if (s.length() == 1)
+      List(s)
+    else
+      permutations(s.substring(0, s.length - 1)).flatMap { p =>
+        merge(p, s.charAt(s.length - 1))
+      }
+  }
+}
