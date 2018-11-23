@@ -1,0 +1,18 @@
+import scala.collection.mutable.ListBuffer
+
+object MyClass {
+def main(args: Array[String]): Unit = {
+        val in = scala.io.StdIn
+        val n = in.readInt()
+        for (_ <- 0 until n) {
+          var word = new ListBuffer[String]()
+          var arr= in.readLine()
+          for(i<-arr){word += i.toString}
+          val wordList = word.toList.sorted
+          var itemHolder = wordList.permutations
+          var s = ""
+          for (item <- itemHolder) {s += item.flatten.mkString("")+" "}
+          print(s.trim+"\n")
+        }
+    }
+}
