@@ -1,0 +1,79 @@
++---------------------+
+| Flume Installation  |
++---------------------+
+Step 1: Extract the tarball
+
+tar -xvf apache-flume-1.7.0-bin.tar.gz -C $HOME
+
+Step 2: Update ".bashrc"
+
+vim ~/.bashrc
+
+export FLUME_HOME=/home/jpasolutions/apache-flume-1.7.0-bin
+export PATH=$FLUME_HOME/bin:$PATH
+
+--save and exit
+
+Step 3: Source the changes
+
+source ~/.bashrc
+
+Step 4: Copy all the conf files to Flume installation directory
+
+cp *.conf $FLUME_HOME
+cp forloop.py $HOME
+
+-------x------------x-----------x------------x--------------x-------x------------x-----------x------------x--------
+
++-----------------+
+| Flume Hands On  |
++-----------------+
+
+cd $FLUME_HOME
+
+---*----*----
+
+1) Fluming from NETCAT source to console LOGGER
+flume-ng agent --conf conf --conf-file netcat.conf --name a1 -Dflume.root.logger=INFO,console
+
+// Open a new terminal
+telnet localhost 44444
+
+---*----*----
+
+// run the python script in a new terminal as a bg process
+nohup python $HOME/forloop.py &
+
+// Also start hadoop
+start-all.sh
+
+2) Fluming from EXEC source to HDFS sink
+flume-ng agent --conf conf --conf-file hdfs.conf --name a1
+
+---*----*----
+mkdir /home/jpasolutions/flumespool/
+
+3) Fluming from SPOOL directory to  HDFS directory
+flume-ng agent --conf conf --conf-file spool.conf --name a1
+
+---*----*----
+mkdir /home/jpasolutions/flume_roll/
+
+4) Fluming to FILE sink
+flume-ng agent --conf conf --conf-file file.conf --name a1
+
+---*----*----
+5) Multiplexing with Flume
+
+flume-ng agent --conf conf --conf-file multiplexing.conf --name a1
+
+// Open a new terminal
+telnet localhost 44444
+
+1, This is my first class
+2, a random text
+1, Again this is for role1
+2, let us push this to role2
+2, this too
+1, lets end this
+---*----*----
