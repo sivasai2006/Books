@@ -1,0 +1,21 @@
+cd /home/cloudera/desktop/ 
+hdfs dfs -put -f employee
+
+hdfs dfs -getmerge -nl employee mergedemployee.txt
+
+hdfs dfs -chmod 664 employee/mergedemployee.txt
+
+
+raghung1990@gmail.com->send a mail and ask him for guidance and dumps
+
+
+https://www.certlibrary.com/exam/CCA175
+https://www.itexams.com/exam/CCA175
+https://github.com/dgadiraju/code/tree/master/hadoop/edw/cloudera
+http://www.itversity.com/courses/cca-spark-and-hadoop-developer-preparation-plan/
+https://www.youtube.com/playlist?list=PLf0swTFhTI8rJvGpOp-LujOcpk-Rlz-yE
+
+
+Questions
+1)how to find the no.of mapper in sqoop import query
+2)how to find which one to use target-dir or warehouse-dir
