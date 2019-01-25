@@ -110,3 +110,111 @@ df.na.fill(fillColValues)
 
 *Spark Read API*
 format is optional because by default Spark will use the Parquet format.
+
+#Merge Sort
+import java.util.List;
+import java.util.ArrayList;
+
+public class MergeSort {
+	public static void main(String args[]) {
+		List<Integer> a = new ArrayList<Integer>();
+		a.add(1);
+		a.add(2);
+		
+		List<Integer> b = new ArrayList<Integer>();
+		b.add(1);
+		b.add(2);
+		
+		List<Integer> result = getMerged(a,b);
+		for (int counter = 0; counter < result.size(); counter++) { 
+			System.out.println(result.get(counter)); 
+		}
+	}
+	
+	public static List<Integer> getMerged(List<Integer> a, List<Integer> b)
+	{
+		List<Integer> result = new ArrayList<Integer>();
+		
+		int totalSize = a.size() + b.size();
+		int i=0,j=0;
+		
+		for (int counter = 0; counter < totalSize; counter++) { 		      
+	        if(a.size()>i && b.size()>j) {
+	        	if(a.get(i)<b.get(j)){
+	        		result.add(a.get(i));
+	        		i = i + 1;
+	        	}
+	        	else {
+	        		result.add(b.get(j));
+	        		j = j + 1;
+	        	}
+	        }
+	        else {
+	        	break;
+	        }
+	    } 
+		if(b.size()==j) {
+			for (int counter = i; counter < a.size(); counter++)
+				result.add(a.get(counter));
+		}
+    	else if(a.size()==i) {
+    		for (int counter = j; counter < b.size(); counter++)
+				result.add(b.get(counter));
+    	}
+		
+		return result;
+	}
+}
+
+#Ranker
+import java.util.ArrayList;
+import java.util.List;
+
+public class Ranker {
+	public static void main(String[] args) 
+    {
+		List<Integer> a = new ArrayList<Integer>();
+		a.add(1);
+		a.add(2);
+		a.add(5);
+		a.add(5);
+		
+		List<Integer> b = new ArrayList<Integer>();
+		int counter = 1;
+		for(int i=0;i<a.size();i++)
+		{
+			if(i!=0 && (a.get(i-1)<a.get(i)))
+				counter += 1;
+			b.add(counter);
+		}
+		
+		for(int i=0;i<b.size();i++)
+		{
+			System.out.println(b.get(i));
+		}
+    }
+}
+
+
+#String Reverse
+public class StringReverse {
+	public static void main(String[] args) 
+    { 
+        String input = "Geeks for Geeks"; 
+  
+        StringBuilder input1 = new StringBuilder(); 
+  
+        // append a string into StringBuilder input1 
+        input1.append(input.toLowerCase()); 
+        
+        // reverse StringBuilder input1 
+        input1 = input1.reverse(); 
+  
+        // print reversed String 
+        System.out.println(input1); 
+    } 
+	
+}
+
+
+
