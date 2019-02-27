@@ -1,0 +1,38 @@
+What is Identity Mapper and Chain Mapper?
+
+Identity Mapper takes the input key/value pair and splits it out without any processing. It is the default Mapper class.
+
+ChainMapper is a class which can be used to run multiple Mapper in a single map task. All mappers are run in a chain fashioned, the output of the first mapper becomes the input of the second mapper, the output of the second mapper becomes the input of the third mapper, and so on until the last mapper.
+
+
+What are the parameters of mappers and reducers?
+
+Both input and output are key-value parameters.
+
+Mapper function parameters:
+LongWritable, text - Input Parameters
+Text, IntWritable - Intermediate Output Parameters
+
+Reducer fucntion parameters:
+Text, IntWritable - Intermediate Output Parameters
+Text, IntWritable - Final Output Parameters
+
+
+How to update a single record in hive ?
+
+Hive version should be 0.14 (or greater)
+File format must be in ORC with TBLPROPERTIES(‘transactional’=’true’)
+Table must be CLUSTERED BY with some Buckets.
+
+
+Total Yrs Exp.: 7 years
+
+CTC: 9.26 L
+
+ECTC: 14 L
+
+NP: last day on April 8
+
+ANY offer in hand: yes (14 L pa)
+
+Have applied with bank of America, last 6 months: No
