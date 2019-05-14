@@ -1,0 +1,10 @@
+https://stackoverflow.com/questions/26606128/how-to-save-a-file-in-hadoop-with-python
+
+https://www.quora.com/How-do-I-write-a-file-in-HDFS-using-Python-programming
+
+https://community.hortonworks.com/articles/92321/interacting-with-hadoop-hdfs-using-python-codes.html
+
+https://www.guru99.com/python-copy-file.html
+
+https://stackoverflow.com/questions/26606128/how-to-save-a-file-in-hadoop-with-python
+
