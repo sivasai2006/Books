@@ -2,7 +2,7 @@ import requests
 import time
 
 _reltio_auth_url = "https://auth.reltio.com/oauth/"
-_user = "Nivedha.Vadivel@bcbsnc.com "
+_user = "Nivedha.Vadivel@bcbsnc.com"
 _password = "Marevin!20"
 _rest_api_retry_count = 3
 _ssl_verify = True
