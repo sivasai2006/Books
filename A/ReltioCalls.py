@@ -6,6 +6,9 @@ _user = "Nivedha.Vadivel@bcbsnc.com "
 _password = "Marevin!20"
 _rest_api_retry_count = 3
 _ssl_verify = True
+_authToken = "3e64c1bb-eb57-4aed-a802-0660025ddd46"
+_refreshToken = "f233eb5b-4d24-42c1-9274-2ed118492a0d"
+#_token_expiration = datetime.now()
 
 def reltio_api_authenticate():
     global _authToken, _refreshToken, _token_expiration
@@ -20,9 +23,10 @@ def reltio_api_authenticate():
 
             expiration_seconds = authorization['expires_in']
             #_token_expiration = datetime.now() + timedelta(seconds=expiration_seconds)
-            _token_expiration = expiration_seconds
+            #_token_expiration = expiration_seconds
 
-            print("Expiration: {}\n".format(_token_expiration))
+            #print("Expiration: {}\n".format(_token_expiration))
+            print("Expiration: {}\n".format(expiration_seconds))
         except KeyError:
             print("Error Description:" + authorization['error_description'] + "\n")
             print("Failure in reltio_api_authenticate()" + "\n")
