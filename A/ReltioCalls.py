@@ -42,6 +42,9 @@ def rest_api_get(endpoint):
         if _reltio_auth_url in endpoint:
             headers["Authorization"] = "Basic cmVsdGlvX3VpOm1ha2l0YQ=="
 
+        print(endpoint +"\n")
+        print(headers + "\n")
+
         response = requests.get(endpoint, headers=headers, verify=_ssl_verify)
 
         if response.status_code == 200:
