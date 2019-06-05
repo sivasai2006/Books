@@ -1,0 +1,10 @@
+from cryptography.fernet import Fernet
+key = Fernet.generate_key()
+print("Key:")
+print(key)
+f = Fernet(key)
+token = f.encrypt(b"pass123!")
+print("Encrypted Msg:")
+print(token.decode("utf-8") )
+print("Decrypted Msg:")
+print(f.decrypt(token).decode("utf-8") )
